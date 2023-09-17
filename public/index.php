@@ -5,8 +5,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 require  '../vendor/autoload.php';
 require  '../src/config/db.php';
 
-
-
 $app = new \Slim\App;
 
 $app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
@@ -15,6 +13,9 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
     return $response;
 });
 require '../src/routes/service.php';
+require '../src/routes/traveller.php';
+require '../src/routes/serviceindex.php';
+require '../src/routes/travellerindex.php';
 
 
 $app->run();

@@ -29,5 +29,6 @@ if(isset($_POST['serviceIndex'])){
     }
     else{
         header("Location:http://localhost:4400/index.html");
+        exit;
     }
 }

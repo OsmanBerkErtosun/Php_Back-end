@@ -14,9 +14,9 @@ $app->get('/api/servis', function(Request $request,Response $response){
         $db = $db->connect();
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        $servicesystem =  $stmt->fetchAll(PDO::FETCH_OBJ);
+        $servicedb =  $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        echo Json_encode($servicesystem);
+        echo Json_encode($servicedb);
     }catch(PDOException $e){
         echo '{"error" : {"text": '.$e->getMassage().'}';
     }

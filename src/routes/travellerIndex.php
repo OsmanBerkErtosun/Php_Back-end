@@ -12,7 +12,7 @@ if(isset($_POST['travellerIndex'])){
     $phone = $_POST['phone'];
     $password = $_POST['password'];
 
-    $kullanicisor=$db->prepare("SELECT * FROM traveller WHERE code=:code and phone=:phone and password=:password");
+    $kullanicisor=$db->prepare("SELECT * FROM traveller WHERE phone=:phone and password=:password");
     $kullanicisor->execute(array(
         'phone' => $phone,
         'password' => $password
